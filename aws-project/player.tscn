@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ddwgn3gcde6j1"]
+
+[ext_resource type="Script" uid="uid://g6b3hir40fou" path="res://Player.cs" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_onrkg"]
+size = Vector3(1.5, 1, 0.5)
+
+[node name="Player" type="CharacterBody3D" unique_id=764054541]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=480983133]
+shape = SubResource("CapsuleShape3D_sh265")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=81919805]
+mesh = SubResource("CapsuleMesh_4flbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1695878354]
+mesh = SubResource("BoxMesh_onrkg")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1763996026]
+transform = Transform3D(-1, 8.54004e-08, 1.8695268e-08, 4.6417558e-08, 0.3374567, 0.9413411, 7.408206e-08, 0.9413411, -0.3374567, 0, 6.7282887, -0.2858814)
+current = true
