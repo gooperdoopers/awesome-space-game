@@ -1,15 +1,19 @@
 [gd_scene format=3 uid="uid://d0swhxm8sltme"]
 
-[ext_resource type="Script" uid="uid://rnpfy4fk17uw" path="res://code/space_test.cs" id="1_ekety"]
+[ext_resource type="Script" uid="uid://cpuh2wuoyport" path="res://code/Main.cs" id="1_ekety"]
 
-[node name="Node2D" type="Node2D" unique_id=1527108280]
+[node name="Root" type="Node" unique_id=1619990730]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=55840119]
-scale = Vector2(25, 25)
+[node name="2droot" type="Node2D" parent="." unique_id=1527108280]
 
-[node name="Node" type="Node" parent="." unique_id=567941502]
+[node name="Camera2D" type="Camera2D" parent="2droot" unique_id=55840119]
+
+[node name="grid" type="Polygon2D" parent="2droot" unique_id=558082591]
+position = Vector2(-693, 94)
+scale = Vector2(10, 10)
+polygon = PackedVector2Array(1, 0, 0, 0, 0, 1, 1, 1)
+
+[node name="ship" type="Node2D" parent="2droot" unique_id=1630657509]
 script = ExtResource("1_ekety")
 
-[node name="Polygon2D" type="Polygon2D" parent="Node" unique_id=558082591]
-scale = Vector2(25, 25)
-polygon = PackedVector2Array(1, 0, 0, 0, 0, 1, 1, 1)
+[node name="3dRoot" type="Node3D" parent="." unique_id=1065606125]
