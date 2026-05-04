@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://g6b3hir40fou" path="res://Player.cs" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://m1v6kern0h25" path="res://MeshInstance3d.cs" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://dh4tvx2q6t3pr" path="res://Raycast.cs" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -15,6 +16,7 @@ albedo_color = Color(1, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=764054541]
 script = ExtResource("1_4flbx")
+speed = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=480983133]
 shape = SubResource("CapsuleShape3D_sh265")
@@ -27,9 +29,10 @@ mesh = SubResource("BoxMesh_onrkg")
 surface_material_override/0 = SubResource("StandardMaterial3D_i3pqv")
 script = ExtResource("2_onrkg")
 
+[node name="Raycast" type="Node3D" parent="MeshInstance3D/MeshInstance3D" unique_id=156613159]
+transform = Transform3D(1, 0, 1.3058658e-22, 0, 1, 0, 1.3058658e-22, 0, 1, 5.4805065e-16, 0, 0)
+script = ExtResource("3_i3pqv")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1763996026]
 transform = Transform3D(-1, 8.742278e-08, -4.3817586e-15, -1.7763568e-15, 2.9802322e-08, 1, 8.742278e-08, 1, -2.9802322e-08, 0, 4.787154, -0.0858814)
 current = true
-
-[node name="Raycast" type="Node3D" parent="Camera3D" unique_id=156613159]
-transform = Transform3D(-1, -1.7763568e-15, 8.742278e-08, 8.742278e-08, 2.9802322e-08, 1, -4.3817586e-15, 1, -2.9802322e-08, 7.507999e-09, 0.085881256, -4.787154)

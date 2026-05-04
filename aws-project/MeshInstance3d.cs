@@ -3,45 +3,19 @@ using System;
 
 public partial class MeshInstance3d : MeshInstance3D
 {
-    private Camera3D camera;
-    private const float RayLength = 1000.0f;
-
-    public override void _Ready()
-    {
-        camera = GetViewport().GetCamera3D();
-    }
-
     public override void _PhysicsProcess(double delta)
     {
-        Vector3 mousePosition3D = GetMousePositionIn3D();
-        if (mousePosition3D != Vector3.Zero)
-        {
-            GD.Print("Mouse at: " + mousePosition3D);
-            LookAt(mousePosition3D);
-        }
+        Raycast raycast = GetNode<Raycast>("Raycast");
+        LookAt(raycast.currentMousePosition);
+
+        GD.Print(raycast.currentMousePosition);
     }
 
-    public Vector3 GetMousePositionIn3D()
+    public override void _Process(double delta)
     {
-        Vector2 mousePos2D = GetViewport().GetMousePosition();
-        
-        Vector3 rayOrigin = camera.ProjectRayOrigin(mousePos2D);
-        Vector3 rayEnd = rayOrigin + camera.ProjectRayNormal(mousePos2D) * RayLength;
-
-        var spaceState = GetWorld3D().DirectSpaceState;
-        var query = PhysicsRayQueryParameters3D.Create(rayOrigin, rayEnd);
-        
-        // Optional: Exclude the player/specific objects
-        // query.Exclude = new Godot.Collections.Array<Rid> { this.GetRid() };
-
-        var result = spaceState.IntersectRay(query);
-
-        if (result.Count > 0)
-        {
-            return (Vector3)result["position"];
-        }
-
-        return Vector3.Zero;
+        Vector3 currentRotation = Rotation;
+        currentRotation.X = 0;
+        Rotation = currentRotation;
     }
 
 }

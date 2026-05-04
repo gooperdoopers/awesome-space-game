@@ -9,6 +9,18 @@ size = Vector3(16, 1, 16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h3gb2"]
 
+[sub_resource type="Gradient" id="Gradient_3xfob"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 1, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mjou5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_avnd3"]
+noise = SubResource("FastNoiseLite_mjou5")
+color_ramp = SubResource("Gradient_3xfob")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rp0ma"]
+albedo_texture = SubResource("NoiseTexture2D_avnd3")
+
 [node name="Node3D" type="Node3D" unique_id=910953210]
 
 [node name="World" type="WorldEnvironment" parent="." unique_id=1973129381]
@@ -25,6 +37,7 @@ shape = SubResource("BoxShape3D_w5ni5")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1723080639]
 transform = Transform3D(16.059, 0, 0, 0, 1.008, 0, 0, 0, 16, 0, 0, 0)
 mesh = SubResource("BoxMesh_h3gb2")
+surface_material_override/0 = SubResource("StandardMaterial3D_rp0ma")
 
 [node name="Player" parent="." unique_id=764054541 instance=ExtResource("1_3ul4b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5647776, 0)
