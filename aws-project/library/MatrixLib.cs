@@ -20,7 +20,7 @@ namespace AWSLib.MatrixesLib{
 						matrix[x][y][z] = new int[wSize];
 
 						for (int w = 0; w < wSize; w++){
-							matrix[x][y][z][w] = 0;
+							//matrix[x][y][z][w] = 0;
             			}
 					}
 				}

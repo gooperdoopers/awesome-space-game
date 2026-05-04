@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace AWSLib.ComponentsLib{
 	public abstract class GeneralComponent{
-		public abstract string name { get; }
-		public abstract int[][][] occupyingSpace { get; }
-		public abstract int zType { get; }
-		public abstract int[] uniqueData { get; }
+		public abstract string Name { get; }
+		public abstract int[][][] OccupyingSpace { get; }
+		public abstract int ZType { get; }
+		public abstract int[] UniqueData { get; }
 	}
 
 	public static class Components{
@@ -15,6 +15,11 @@ namespace AWSLib.ComponentsLib{
 		public static string get_ship_data()
 		{
 			return("cool");
+		}
+
+		public static void CompileComponents()
+		{
+			
 		}
 	}
 }
