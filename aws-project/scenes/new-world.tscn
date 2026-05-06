@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://yuyyjptx0myf"]
+
+[ext_resource type="Script" uid="uid://cba6ja3ugyni1" path="res://WorldControl.cs" id="1_ny0gy"]
+
+[sub_resource type="Environment" id="Environment_tknnv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w4wcj"]
+size = Vector3(15, 0.5, 15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_85b0w"]
+size = Vector3(15, 0.5, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_usmwa"]
+size = Vector3(0.5, 3, 15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3w06g"]
+size = Vector3(0.5, 3, 15)
+
+[node name="Node3D" type="Node3D" unique_id=478083099]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1805292733]
+environment = SubResource("Environment_tknnv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1770588654]
+transform = Transform3D(0.9733673, 0.002572725, -0.22923692, 0.22925135, -0.01092341, 0.973306, 0, -0.99993706, -0.01122229, 0, 6.885294, 0)
+light_energy = 1.317
+
+[node name="Camera3D" type="Camera3D" parent="WorldEnvironment" unique_id=369710237]
+transform = Transform3D(-3.7855177e-08, 0.86602545, -0.49999994, -2.1855692e-08, 0.4999999, 0.8660255, 1, 4.3711392e-08, 4.7365585e-16, -8, 10.761836, 0)
+current = true
+
+[node name="Obstacles" type="Node3D" parent="." unique_id=1520771314]
+script = ExtResource("1_ny0gy")
+wallHeight = 2.0
+
+[node name="Floor" type="StaticBody3D" parent="Obstacles" unique_id=114886685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9965956, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Floor" unique_id=1225334214]
+shape = SubResource("BoxShape3D_w4wcj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Floor" unique_id=2021937523]
+mesh = SubResource("BoxMesh_85b0w")
+
+[node name="Wall1" type="StaticBody3D" parent="Obstacles" unique_id=2124776512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.245285, 0.25075483, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Wall1" unique_id=15095412]
+shape = SubResource("BoxShape3D_usmwa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Wall1" unique_id=1457174109]
+mesh = SubResource("BoxMesh_3w06g")
+
+[node name="Wall2" type="StaticBody3D" parent="Obstacles" unique_id=2130190776]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0021877289, 0.25075483, -7.371797)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Wall2" unique_id=1793554358]
+shape = SubResource("BoxShape3D_usmwa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Wall2" unique_id=1616875829]
+mesh = SubResource("BoxMesh_3w06g")
+
+[node name="Wall3" type="StaticBody3D" parent="Obstacles" unique_id=1500682278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2494354, 0.25075483, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Wall3" unique_id=2719261]
+shape = SubResource("BoxShape3D_usmwa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Wall3" unique_id=1802544129]
+mesh = SubResource("BoxMesh_3w06g")
+
+[node name="Wall4" type="StaticBody3D" parent="Obstacles" unique_id=2004809970]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0021877289, 0.25075483, 7.258984)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Wall4" unique_id=2016015665]
+shape = SubResource("BoxShape3D_usmwa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Wall4" unique_id=157093078]
+mesh = SubResource("BoxMesh_3w06g")

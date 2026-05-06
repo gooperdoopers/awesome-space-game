@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dfe7ds4a7wolg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8no8k"]
+size = Vector3(1.5, 2, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2qrch"]
+size = Vector3(1.5, 2, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jaot8"]
+albedo_color = Color(0, 1, 0, 1)
+
+[node name="NewPlayer" type="CharacterBody3D" unique_id=2023411881]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1404244237]
+shape = SubResource("BoxShape3D_8no8k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=819578496]
+mesh = SubResource("BoxMesh_2qrch")
+surface_material_override/0 = SubResource("StandardMaterial3D_jaot8")

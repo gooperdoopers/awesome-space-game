@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://f1igqkiqq7vp"
-path="res://.godot/imported/datrat.glb-c1bfc55fd033b22fceb2fcdde97e9ae8.scn"
+path="res://.godot/imported/datrat.glb-55ca8a09a052e589c4f937714db533dd.scn"
 
 [deps]
 
-source_file="res://assets/datrat.glb"
-dest_files=["res://.godot/imported/datrat.glb-c1bfc55fd033b22fceb2fcdde97e9ae8.scn"]
+source_file="res://assets/models/datrat.glb"
+dest_files=["res://.godot/imported/datrat.glb-55ca8a09a052e589c4f937714db533dd.scn"]
 
 [params]
 
